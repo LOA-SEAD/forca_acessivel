@@ -8,7 +8,7 @@ function iniciar() {
 
     var p = document.getElementById('dicaNaTela');
     p.innerHTML = '<p class="customfont" >' + jogo.bd[jogo.bdAux[jogo.sorteio]].dica + "</p>";
-    p.setAttribute('aria-label',jogo.bd[jogo.bdAux[jogo.sorteio]].dica);
+    p.setAttribute('aria-label', jogo.bd[jogo.bdAux[jogo.sorteio]].dica);
 
     if (jogo.bd[jogo.bdAux[jogo.sorteio]].contribuicao != "0") {
         var contribuicao = document.getElementById('contribuicaoNaTela').style.display;
@@ -17,7 +17,7 @@ function iniciar() {
 
     var pontos = document.getElementById('pontosNaTela');
     pontos.innerHTML = 'Pontos: ' + Math.round(jogo.pontos);
-    pontos.setAttribute('aria-label','Pontos: ' + Math.round(jogo.pontos));
+    pontos.setAttribute('aria-label', 'Pontos: ' + Math.round(jogo.pontos));
 
     //Pegamos uma palavra aleatoria
 
@@ -44,7 +44,7 @@ function iniciar() {
     reiniciar_teclado();
 
     reiniciar_personagem();
-    
+
     $("#falador").text("");
 
     update();
@@ -87,8 +87,8 @@ function reiniciar_teclado() {
     var i, botao;
     for (i = 65; i <= 90; i++) {
         botao = document.getElementById('botao' + String.fromCharCode(i));
-        botao.setAttribute('style','color:black;');
-        botao.setAttribute('onclick','click_botao("'+ String.fromCharCode(i) +'")');
+        botao.setAttribute('style', 'color:black;');
+        botao.setAttribute('onclick', 'click_botao("' + String.fromCharCode(i) + '")');
     }
 
 
@@ -195,13 +195,13 @@ function verificarErro(_letra)
     }
     if (!deuErro)
     {
-        $("#falador").text("Letra Certa");
-         document.getElementById('tada').play();
+        //$("#falador").text("Letra Certa");
+        document.getElementById('tada').play();
     }
     if (deuErro)
     {
-        $("#falador").text("Letra Errada");
-         document.getElementById('slap').play();
+        //$("#falador").text("Letra Errada");
+        document.getElementById('slap').play();
         jogo.erros++;
         mudarPersonagem();
     }

@@ -230,3 +230,7 @@ height: 1px !important;
 width: 1px !important;
 overflow: hidden;
 }
+
+#falador{
+    color: transparent;
+}
